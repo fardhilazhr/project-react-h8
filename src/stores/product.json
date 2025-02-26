@@ -1,0 +1,228 @@
+[
+  {
+    "id": 1,
+    "name": "Paracetamol",
+    "stock": 20,
+    "price": "Rp. 5.000,00",
+    "desc_short": "Obat pereda nyeri dan demam.",
+    "desc_long": "Paracetamol adalah obat pereda nyeri dan penurun demam yang sering digunakan untuk mengatasi sakit kepala, flu, nyeri otot, dan demam akibat infeksi.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 2,
+    "name": "Amoxicillin",
+    "stock": 15,
+    "price": "Rp. 15.000,00",
+    "desc_short": "Antibiotik untuk infeksi bakteri.",
+    "desc_long": "Amoxicillin adalah antibiotik yang digunakan untuk mengatasi infeksi bakteri pada saluran pernapasan, kulit, telinga, dan saluran kemih.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 3,
+    "name": "Cetirizine",
+    "stock": 10,
+    "price": "Rp. 10.000,00",
+    "desc_short": "Obat antihistamin untuk alergi.",
+    "desc_long": "Cetirizine digunakan untuk meredakan alergi seperti gatal-gatal, ruam, bersin, dan mata berair akibat reaksi alergi terhadap debu atau serbuk sari.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 4,
+    "name": "Ibuprofen",
+    "stock": 25,
+    "price": "Rp. 8.500,00",
+    "desc_short": "Obat pereda nyeri dan radang.",
+    "desc_long": "Ibuprofen adalah obat antiinflamasi nonsteroid yang digunakan untuk meredakan nyeri, peradangan, dan demam akibat berbagai kondisi seperti sakit kepala atau nyeri sendi.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 5,
+    "name": "Loperamide",
+    "stock": 5,
+    "price": "Rp. 6.000,00",
+    "desc_short": "Obat antidiare.",
+    "desc_long": "Loperamide digunakan untuk mengatasi diare dengan memperlambat gerakan usus, mengurangi frekuensi buang air besar, dan membantu tubuh menyerap cairan lebih baik.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 6,
+    "name": "Mefenamic Acid",
+    "stock": 30,
+    "price": "Rp. 12.000,00",
+    "desc_short": "Obat pereda nyeri.",
+    "desc_long": "Mefenamic Acid sering digunakan untuk mengurangi nyeri akibat sakit gigi, nyeri haid, dan nyeri otot dengan efek antiinflamasi yang membantu mengurangi pembengkakan.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 7,
+    "name": "Omeprazole",
+    "stock": 8,
+    "price": "Rp. 18.000,00",
+    "desc_short": "Obat asam lambung.",
+    "desc_long": "Omeprazole bekerja dengan mengurangi produksi asam lambung, sehingga membantu mengatasi GERD, tukak lambung, dan gangguan asam lainnya.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 8,
+    "name": "Dexamethasone",
+    "stock": 3,
+    "price": "Rp. 20.000,00",
+    "desc_short": "Obat kortikosteroid.",
+    "desc_long": "Dexamethasone digunakan untuk mengatasi peradangan, alergi berat, dan beberapa gangguan autoimun dengan menghambat respon imun tubuh yang berlebihan.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 9,
+    "name": "Aspirin",
+    "stock": 17,
+    "price": "Rp. 7.500,00",
+    "desc_short": "Obat pengencer darah.",
+    "desc_long": "Aspirin digunakan sebagai pereda nyeri serta untuk mengurangi risiko serangan jantung dan stroke dengan cara mencegah pembekuan darah.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 10,
+    "name": "Simvastatin",
+    "stock": 11,
+    "price": "Rp. 28.000,00",
+    "desc_short": "Obat penurun kolesterol.",
+    "desc_long": "Simvastatin membantu menurunkan kadar kolesterol jahat dalam darah dan mencegah penyakit jantung serta stroke.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 11,
+    "name": "Metformin",
+    "stock": 9,
+    "price": "Rp. 22.000,00",
+    "desc_short": "Obat untuk diabetes tipe 2.",
+    "desc_long": "Metformin membantu mengontrol kadar gula darah pada penderita diabetes tipe 2 dengan meningkatkan respons tubuh terhadap insulin.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 12,
+    "name": "Losartan",
+    "stock": 14,
+    "price": "Rp. 30.000,00",
+    "desc_short": "Obat tekanan darah tinggi.",
+    "desc_long": "Losartan digunakan untuk menurunkan tekanan darah dan melindungi ginjal dari kerusakan akibat diabetes.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 13,
+    "name": "Clopidogrel",
+    "stock": 7,
+    "price": "Rp. 40.000,00",
+    "desc_short": "Obat anti pembekuan darah.",
+    "desc_long": "Clopidogrel digunakan untuk mencegah pembekuan darah yang dapat menyebabkan serangan jantung dan stroke.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 14,
+    "name": "Atorvastatin",
+    "stock": 13,
+    "price": "Rp. 35.000,00",
+    "desc_short": "Obat penurun kolesterol tinggi.",
+    "desc_long": "Atorvastatin membantu menurunkan kadar kolesterol dan trigliserida dalam darah serta mengurangi risiko penyakit kardiovaskular.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+
+  {
+    "id": 15,
+    "name": "Ranitidine",
+    "stock": 12,
+    "price": "Rp. 18.000,00",
+    "desc_short": "Obat maag dan asam lambung.",
+    "desc_long": "Ranitidine digunakan untuk mengurangi produksi asam lambung dan meredakan gejala maag, GERD, serta tukak lambung.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 16,
+    "name": "Amlodipine",
+    "stock": 8,
+    "price": "Rp. 25.000,00",
+    "desc_short": "Obat hipertensi.",
+    "desc_long": "Amlodipine digunakan untuk menurunkan tekanan darah tinggi serta mencegah serangan jantung dan stroke.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 17,
+    "name": "Ciprofloxacin",
+    "stock": 6,
+    "price": "Rp. 32.000,00",
+    "desc_short": "Antibiotik untuk infeksi bakteri.",
+    "desc_long": "Ciprofloxacin digunakan untuk mengobati berbagai infeksi bakteri seperti infeksi saluran kemih, saluran pernapasan, dan kulit.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 18,
+    "name": "Hydrochlorothiazide",
+    "stock": 10,
+    "price": "Rp. 22.000,00",
+    "desc_short": "Obat diuretik untuk tekanan darah.",
+    "desc_long": "Hydrochlorothiazide membantu menurunkan tekanan darah tinggi dan mengurangi pembengkakan akibat retensi cairan dalam tubuh.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 19,
+    "name": "Prednisone",
+    "stock": 4,
+    "price": "Rp. 26.000,00",
+    "desc_short": "Obat kortikosteroid.",
+    "desc_long": "Prednisone digunakan untuk mengobati peradangan, alergi, dan penyakit autoimun dengan menekan sistem kekebalan tubuh.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 20,
+    "name": "Diclofenac",
+    "stock": 14,
+    "price": "Rp. 15.000,00",
+    "desc_short": "Obat antiinflamasi.",
+    "desc_long": "Diclofenac digunakan untuk meredakan nyeri akibat peradangan seperti arthritis, nyeri otot, dan cedera olahraga.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 21,
+    "name": "Metronidazole",
+    "stock": 9,
+    "price": "Rp. 19.000,00",
+    "desc_short": "Antibiotik untuk infeksi anaerob.",
+    "desc_long": "Metronidazole digunakan untuk mengobati infeksi bakteri anaerob dan infeksi parasit seperti amebiasis dan giardiasis.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 22,
+    "name": "Warfarin",
+    "stock": 7,
+    "price": "Rp. 45.000,00",
+    "desc_short": "Obat pengencer darah.",
+    "desc_long": "Warfarin digunakan untuk mencegah pembekuan darah yang dapat menyebabkan stroke atau serangan jantung.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 23,
+    "name": "Azithromycin",
+    "stock": 5,
+    "price": "Rp. 38.000,00",
+    "desc_short": "Antibiotik spektrum luas.",
+    "desc_long": "Azithromycin digunakan untuk mengobati berbagai infeksi bakteri, termasuk infeksi saluran pernapasan dan infeksi kulit.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 24,
+    "name": "Gabapentin",
+    "stock": 3,
+    "price": "Rp. 55.000,00",
+    "desc_short": "Obat untuk kejang dan nyeri saraf.",
+    "desc_long": "Gabapentin digunakan untuk mengobati kejang serta nyeri saraf akibat neuropati atau herpes zoster.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  },
+  {
+    "id": 25,
+    "name": "Levothyroxine",
+    "stock": 11,
+    "price": "Rp. 50.000,00",
+    "desc_short": "Obat untuk hipotiroidisme.",
+    "desc_long": "Levothyroxine digunakan untuk mengobati hipotiroidisme dengan menggantikan hormon tiroid yang kurang dalam tubuh.",
+    "imageUrl": "https://dummyimage.com/500x350.png/dddddd/000000"
+  }
+]
