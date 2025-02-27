@@ -31,7 +31,7 @@ export default function Login() {
         <div className="my-4">
           <Label htmlFor="email">Email</Label>
           <Input
-            className="w-full"
+            className="w-full rounded-md"
             id="email"
             onChange={setEmail}
             ref={emailRef}
@@ -43,7 +43,7 @@ export default function Login() {
         <div className="my-4">
           <Label htmlFor="password">Password</Label>
           <Input
-            className="w-full"
+            className="w-full rounded-md"
             id="password"
             type="password"
             onChange={setPassword}
