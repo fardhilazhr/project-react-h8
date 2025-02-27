@@ -21,6 +21,11 @@ export default function CartDetail({ product }: { product: ICartProduct }) {
         <p className="text-xs md:text-md text-neutral-400">{product.price}</p>
       </div>
       <div className="flex items-center gap-2 md:gap-4">
+        <Button
+          imageUrl="/assets/trash.svg"
+          onClick={() => removeFromCart(product.id)}
+          className="text-only"
+        />
         <button
           onClick={() => removeOneFromCart(product.id)}
           className="bg-neutral-100 p-1 md:p-2 text-sm rounded-md cursor-pointer"
@@ -43,12 +48,6 @@ export default function CartDetail({ product }: { product: ICartProduct }) {
             className="w-3 h-3 md:w-4 md:h-4"
           />
         </button>
-
-        <Button
-          imageUrl="/assets/trash.svg"
-          onClick={() => removeFromCart(product.id)}
-          className="text-only"
-        />
       </div>
     </div>
   );

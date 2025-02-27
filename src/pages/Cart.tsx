@@ -17,7 +17,7 @@ export default function Cart() {
 
   return (
     <>
-      <div className="px-20 pb-20 pt-8">
+      <div className=" px-10 pt-10 pb-10 lg:px-20 lg:pb-20 lg:pt-8">
         {cart.length === 0 ? (
           <div className="flex flex-col">
             <div className="flex flex-col items-center">
