@@ -16,7 +16,7 @@ export default function Button({
       className={`
         ${
           className?.includes("outline")
-            ? "bg-white text-cyan-600 font-semibold py-2 px-4 rounded-md outline outline-cyan-600 shadow-gray-200 active:bg-cyan-800 active:text-white ease-in-out cursor-pointer"
+            ? "bg-white text-cyan-600 font-semibold py-2 px-4 rounded-md outline-cyan-600 shadow-gray-200 active:bg-cyan-800 active:text-white ease-in-out cursor-pointer"
             : className?.includes("text-only")
             ? "font-semibold rounded-md cursor-pointer"
             : "bg-cyan-600 text-white font-semibold py-2 px-4 rounded-md shadow-md shadow-gray-200 active:shadow-none active:bg-cyan-800 active:outline-2 active:outline-cyan-800 active:outline-offset-2 ease-in-out cursor-pointer"

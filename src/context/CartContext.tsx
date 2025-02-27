@@ -6,6 +6,7 @@ interface ICartContext {
   cart: ICartProduct[];
   addToCart: (product: IProduct) => void;
   removeFromCart: (productId: number) => void;
+  removeOneFromCart: (productId: number) => void;
   clearCart: () => void;
 }
 

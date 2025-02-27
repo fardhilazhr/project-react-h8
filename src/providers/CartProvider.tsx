@@ -28,20 +28,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return [...prevCart, { ...product, quantity: 1 }];
     });
 
-    setProducts((prevProducts) =>
-      prevProducts.map((p) =>
-        p.id === product.id && p.stock > 0 ? { ...p, stock: p.stock - 1 } : p
-      )
-    );
+    // setProducts((prevProducts) =>
+    //   prevProducts.map((p) =>
+    //     p.id === product.id && p.stock > 0 ? { ...p, stock: p.stock - 1 } : p
+    //   )
+    // );
   }
 
-  function removeFromCart(productId: number) {
-    let removedItem: ICartProduct | undefined;
-
+  function removeOneFromCart(productId: number) {
     setCart((prevCart) =>
       prevCart.reduce((acc, item) => {
         if (item.id === productId) {
-          removedItem = item;
           if (item.quantity === 1) return acc;
           return [...acc, { ...item, quantity: item.quantity - 1 }];
         }
@@ -49,13 +46,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }, [] as ICartProduct[])
     );
 
-    if (removedItem) {
-      setProducts((prevProducts) =>
-        prevProducts.map((p) =>
-          p.id === productId ? { ...p, stock: p.stock + 1 } : p
-        )
-      );
-    }
+    // setProducts((prevProducts) =>
+    //   prevProducts.map((p) =>
+    //     p.id === productId ? { ...p, stock: p.stock + 1 } : p
+    //   )
+    // );
+  }
+
+  function removeFromCart(productId: number) {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   }
 
   function clearCart() {
@@ -70,7 +69,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart }}
+      value={{ cart, addToCart, removeFromCart, removeOneFromCart, clearCart }}
     >
       {children}
     </CartContext.Provider>

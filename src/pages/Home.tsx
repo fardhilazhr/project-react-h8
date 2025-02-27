@@ -14,8 +14,8 @@ export default function Home() {
 
   return (
     <div>
-      <div className="p-4">
-        <div className="flex justify-center my-4">
+      <div className="p-8">
+        <div className="mx-4 my-4">
           <select
             className="border border-slate-200 px-4 py-3 rounded-lg"
             onChange={(e) => setSortBy(e.target.value as "name" | "stock")}
