@@ -7,6 +7,7 @@ interface IProductContext {
   error: string;
   keyword: string | null;
   setKeyword: (keyword: string) => void;
+  setSortBy: (sortBy: "name" | "stock" | null) => void;
 }
 
 export const ProductContext = createContext({} as IProductContext);

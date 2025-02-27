@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import Button from "./UI/Button";
+import useCart from "../hooks/useCart";
 
 export interface IProduct {
   id: number;
@@ -13,6 +14,8 @@ export interface IProduct {
 
 export default function Product({ product }: { product: IProduct }) {
   const navigate = useNavigate();
+  const { addToCart } = useCart();
+
   return (
     <div className="w-[300px] h-auto bg-white py-6 px-6 shadow-lg border border-neutral-200 rounded-md grid justify-items-center">
       <div>
@@ -24,7 +27,9 @@ export default function Product({ product }: { product: IProduct }) {
         <h1 className="text-xl font-bold text-center">{product.name}</h1>
         <p className="text-sm mb-4 text-center">{product.desc_short}</p>
         <div className="flex justify-between items-center mb-4">
-          <p className="text-xs">Stock: {product.stock}</p>
+          <p className="text-xs">
+            Stock: {product.stock > 0 ? product.stock : "Out of stock"}
+          </p>
           <p className="text-md font-bold">{product.price}</p>
         </div>
         <div className="flex justify-between items-center gap-2">
@@ -33,7 +38,13 @@ export default function Product({ product }: { product: IProduct }) {
             className=" outline mb-4 w-full"
             onClick={() => navigate(`/product/${product.id}`)}
           />
-          <Button className="mb-4 w-full" imageUrl="src/assets/cart.svg" />
+          <Button
+            className="mb-4 w-full"
+            imageUrl="/assets/cart.svg"
+            onClick={() => {
+              addToCart(product);
+            }}
+          />
         </div>
       </div>
     </div>

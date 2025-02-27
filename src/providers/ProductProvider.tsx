@@ -8,6 +8,7 @@ export function ProductProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState("");
   const [keyword, setKeyword] = useState<string | null>("");
+  const [sortBy, setSortBy] = useState<"name" | "stock" | null>(null);
 
   useEffect(() => {
     if (keyword === null) return;
@@ -16,17 +17,24 @@ export function ProductProvider({ children }: { children: ReactNode }) {
       const filteredProducts = productData.filter((product) =>
         product.name.toLowerCase().includes(keyword.toLowerCase())
       );
+
+      if (sortBy === "name") {
+        filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (sortBy === "stock") {
+        filteredProducts.sort((a, b) => b.stock - a.stock);
+      }
+
       setProducts(filteredProducts);
       setError("");
     } catch (error) {
       setError((error as Error).message);
     }
     setLoading(false);
-  }, [keyword]);
+  }, [keyword, sortBy]);
 
   return (
     <ProductContext.Provider
-      value={{ products, loading, error, keyword, setKeyword }}
+      value={{ products, loading, error, keyword, setKeyword, setSortBy }}
     >
       {children}
     </ProductContext.Provider>
