@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import Button from "./UI/Button";
 import useCart from "../hooks/useCart";
+import useProduct from "../hooks/useProduct";
 
 export interface IProduct {
   id: number;
@@ -15,6 +16,7 @@ export interface IProduct {
 export default function Product({ product }: { product: IProduct }) {
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { updateStock } = useProduct();
 
   return (
     <div className="w-[300px] h-auto bg-white py-6 px-6 shadow-lg border border-neutral-200 rounded-md grid justify-items-center">
@@ -35,15 +37,18 @@ export default function Product({ product }: { product: IProduct }) {
         <div className="flex justify-between items-center gap-2">
           <Button
             label="Detail"
-            className=" outline mb-4 w-full"
+            className="outline mb-4 w-full"
             onClick={() => navigate(`/product/${product.id}`)}
           />
+
           <Button
             className="mb-4 w-full"
             imageUrl="/assets/cart.svg"
             onClick={() => {
               addToCart(product);
+              updateStock(product.id, 1, true);
             }}
+            disabled={product.stock === 0 ? true : false}
           />
         </div>
       </div>

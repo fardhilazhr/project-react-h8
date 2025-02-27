@@ -2,7 +2,7 @@ import { useState, useEffect, ReactNode } from "react";
 import { IProduct } from "../components/Product";
 import { CartContext } from "../context/CartContext";
 import { ICartProduct } from "../components/CartDetail";
-
+import productData from "../stores/product.json";
 export function CartProvider({ children }: { children: ReactNode }) {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [cart, setCart] = useState<ICartProduct[]>(() => {
@@ -13,6 +13,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  useEffect(() => {
+    setProducts(productData);
+    localStorage.setItem("products", JSON.stringify(productData));
+  }, []);
 
   function addToCart(product: IProduct) {
     setCart((prevCart) => {
@@ -28,11 +33,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return [...prevCart, { ...product, quantity: 1 }];
     });
 
-    // setProducts((prevProducts) =>
-    //   prevProducts.map((p) =>
-    //     p.id === product.id && p.stock > 0 ? { ...p, stock: p.stock - 1 } : p
-    //   )
-    // );
+    setProducts((prevProducts) =>
+      prevProducts.map((p) =>
+        p.id === product.id && p.stock > 0 ? { ...p, stock: p.stock - 1 } : p
+      )
+    );
+    console.log("Stok setelah update:", products);
   }
 
   function removeOneFromCart(productId: number) {
@@ -46,30 +52,53 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }, [] as ICartProduct[])
     );
 
-    // setProducts((prevProducts) =>
-    //   prevProducts.map((p) =>
-    //     p.id === productId ? { ...p, stock: p.stock + 1 } : p
-    //   )
-    // );
+    setProducts((prevProducts) =>
+      prevProducts.map((p) =>
+        p.id === productId ? { ...p, stock: p.stock + 1 } : p
+      )
+    );
   }
 
   function removeFromCart(productId: number) {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+    setCart((prevCart) => {
+      const updatedCart = prevCart.filter((item) => item.id !== productId);
+
+      setProducts((prevProducts) =>
+        prevProducts.map((p) => {
+          const cartItem = prevCart.find((item) => item.id === p.id);
+          return cartItem ? { ...p, stock: p.stock + cartItem.quantity } : p;
+        })
+      );
+
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      return updatedCart;
+    });
   }
 
   function clearCart() {
-    setProducts((prevProducts) =>
-      prevProducts.map((p) => {
+    setProducts((prevProducts) => {
+      const updatedProducts = prevProducts.map((p) => {
         const cartItem = cart.find((item) => item.id === p.id);
         return cartItem ? { ...p, stock: p.stock + cartItem.quantity } : p;
-      })
-    );
+      });
+
+      localStorage.setItem("products", JSON.stringify(updatedProducts));
+      return updatedProducts;
+    });
+
     setCart([]);
+    localStorage.setItem("cart", JSON.stringify([]));
   }
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, removeOneFromCart, clearCart }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        removeOneFromCart,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>

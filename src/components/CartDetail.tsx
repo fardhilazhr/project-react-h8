@@ -10,30 +10,38 @@ export default function CartDetail({ product }: { product: ICartProduct }) {
   const { addToCart, removeFromCart, removeOneFromCart } = useCart();
 
   return (
-    <div className="flex items-center justify-between py-4 border-b border-gray-200 px-6">
+    <div className="flex items-center justify-between py-2 border-b border-gray-200 px-2 md:px-4 text-sm md:text-base">
       <img
         src={product.imageUrl}
         alt={product.name}
-        className="w-20 h-20 rounded-2xl mr-4"
+        className="w-12 h-12 md:w-16 md:h-16 rounded-2xl"
       />
-      <div className="flex-1">
-        <p className="font-bold text-xl mb-1">{product.name}</p>
-        <p className="text-md text-neutral-400">{product.price}</p>
+      <div className="flex-1 text-left px-2 md:px-4">
+        <p className="font-bold text-sm md:text-lg mb-1">{product.name}</p>
+        <p className="text-xs md:text-md text-neutral-400">{product.price}</p>
       </div>
-      <div className="flex justify-between items-center gap-5 mt-2">
+      <div className="flex items-center gap-2 md:gap-4">
         <button
           onClick={() => removeOneFromCart(product.id)}
-          className="bg-neutral-100 px-2 py-2 text-lg rounded-md cursor-pointer"
+          className="bg-neutral-100 p-1 md:p-2 text-sm rounded-md cursor-pointer"
         >
-          <img src="/assets/minus.svg" alt="minus" className="w-4 h-4" />
+          <img
+            src="/assets/minus.svg"
+            alt="minus"
+            className="w-3 h-3 md:w-4 md:h-4"
+          />
         </button>
 
-        <p className="text-md font-bold">{product.quantity}</p>
+        <p className="text-sm md:text-md font-bold">{product.quantity}</p>
         <button
           onClick={() => addToCart(product)}
-          className="bg-neutral-100 px-2 py-2 text-lg rounded-md cursor-pointer"
+          className="bg-neutral-100 p-1 md:p-2 text-sm rounded-md cursor-pointer"
         >
-          <img src="/assets/plus.svg" alt="plus" className="w-4 h-4" />
+          <img
+            src="/assets/plus.svg"
+            alt="plus"
+            className="w-3 h-3 md:w-4 md:h-4"
+          />
         </button>
 
         <Button

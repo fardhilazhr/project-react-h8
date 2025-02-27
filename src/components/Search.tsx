@@ -8,7 +8,7 @@ export default function Search() {
     <Input
       type="text"
       placeholder="Search"
-      className="bg-white w-[400px] rounded-3xl"
+      className="bg-white w-auto rounded-3xl"
       onChange={(value: string) => setKeyword(value)}
     />
   );
