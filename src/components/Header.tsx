@@ -14,7 +14,7 @@ export default function Header() {
     navigate("/login");
   }
   return (
-    <header className="bg-white border-b-2 border-cyan-600 py-4 px-4 md:px-7 shadow-md sticky top-0 w-full">
+    <header className="bg-white border-b-2 border-cyan-600 py-4 px-4 lg:px-7 shadow-md sticky top-0 w-full">
       {window.location.pathname === "/cart" ? (
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-wrap gap-4 items-center">
@@ -38,19 +38,37 @@ export default function Header() {
               )}
             </div>
             <a href="#" onClick={logout}>
-              <Button imageUrl="/assets/logout.svg" className="text-only" />
+              <Button imageUrl="/assets/logout.svg" className="text-only " />
             </a>
           </div>
         </div>
       ) : (
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex  lg:flex-row justify-between items-center gap-4">
           <NavLink to="/">
             <h1 className="text-xl md:text-2xl font-bold text-cyan-600">
               SyulitPharmacy
             </h1>
           </NavLink>
-          <div className="flex flex-wrap justify-between items-center gap-4">
-            <Search />
+
+          <div className="flex flex-row justify-between items-center gap-4">
+            <Button
+              imageUrl="/assets/search.svg"
+              className="text-only lg:hidden"
+              onClick={() => {
+                const search = document.querySelector(".search");
+                if (search) {
+                  search.classList.toggle("hidden");
+                  const header = document.querySelector("header");
+                  if (header) {
+                    header.append(search);
+                  }
+                }
+              }}
+            />
+            <div className="search hidden  lg:block ">
+              <Search />
+            </div>
+
             <NavLink to="/cart" className="text-white">
               <div className="relative">
                 <Button imageUrl="/assets/cart2.svg" className="text-only" />

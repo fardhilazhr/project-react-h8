@@ -145,7 +145,7 @@ export default function Register() {
         <div>
           <p className="text-center mt-2">
             Don't have an account?{" "}
-            <NavLink to="/Login" className="font-semibold text-cyan-600">
+            <NavLink to="/login" className="font-semibold text-cyan-600">
               Login
             </NavLink>
           </p>

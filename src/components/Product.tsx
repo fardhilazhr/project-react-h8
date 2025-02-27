@@ -19,30 +19,41 @@ export default function Product({ product }: { product: IProduct }) {
   const { updateStock } = useProduct();
 
   return (
-    <div className="w-[300px] h-auto bg-white py-6 px-6 shadow-lg border border-neutral-200 rounded-md grid justify-items-center">
-      <div>
-        <img
-          src="https://dummyimage.com/500x350.png/dddddd/000000"
-          alt="dummy"
-          className="w-[250px] h-[250px] object-cover rounded-md mb-4 "
-        />
-        <h1 className="text-xl font-bold text-center">{product.name}</h1>
-        <p className="text-sm mb-4 text-center">{product.desc_short}</p>
-        <div className="flex justify-between items-center mb-4">
-          <p className="text-xs">
+    <div className="w-auto h-auto bg-white rounded-xl grid justify-items-center border border-neutral-200 cursor-pointer transition-all duration-100 active:shadow-md active:scale-102">
+      <img
+        src="https://dummyimage.com/500x350.png/dddddd/000000"
+        alt="dummy"
+        className="w-[170px] h-[120px] lg:w-[250px] lg:h-[200px] object-cover rounded-t-xl mb-2 "
+        onClick={() => navigate(`/product/${product.id}`)}
+      />
+      <div
+        className="lg-px-2"
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
+        <h1 className="text-md lg:text-xl font-bold text-center">
+          {product.name}
+        </h1>
+        <p className="text-xs lg:text-sm mb-1 lg:mb-4 text-center hidden lg:block">
+          {product.desc_short}
+        </p>
+        <div className="flex flex-col lg:justify-between items-center mb-2 ">
+          <p className="text-[9px] lg:text-xs text-neutral-600 mb-2">
             Stock: {product.stock > 0 ? product.stock : "Out of stock"}
           </p>
-          <p className="text-md font-bold">{product.price}</p>
+          <p className="text-sm lg:text-lg font-bold">{product.price}</p>
         </div>
-        <div className="flex justify-between items-center gap-2">
+      </div>
+      <div className="flex justify-center lg:gap-2">
+        <div className="mb-4 lg:w-[100px]">
           <Button
             label="Detail"
-            className="outline mb-4 w-full"
+            className="outline hidden lg:block w-full"
             onClick={() => navigate(`/product/${product.id}`)}
           />
-
+        </div>
+        <div className="mb-4 lg:w-[100px]">
           <Button
-            className="mb-4 w-full"
+            className="lg:w-full"
             imageUrl="/assets/cart.svg"
             onClick={() => {
               addToCart(product);

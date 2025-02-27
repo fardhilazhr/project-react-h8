@@ -33,7 +33,7 @@ export default function Home() {
           </select>
         </div>
 
-        <div className="flex gap-5 flex-wrap my-8 justify-center items-center m-auto w-auto px-6 py-3">
+        <div className="flex gap-4 lg:gap-7  flex-wrap my-8 justify-center items-center px-6 py-3">
           {products.map((product, id) => (
             <Product product={product} key={id} />
           ))}
