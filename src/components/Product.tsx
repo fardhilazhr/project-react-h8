@@ -23,7 +23,7 @@ export default function Product({ product }: { product: IProduct }) {
       <img
         src="https://dummyimage.com/500x350.png/dddddd/000000"
         alt="dummy"
-        className="w-[170px] h-[120px] lg:w-[250px] lg:h-[200px] object-cover rounded-t-xl mb-2 "
+        className="w-[150px] h-[100px] lg:w-[250px] lg:h-[200px] object-cover rounded-t-xl mb-2 "
         onClick={() => navigate(`/product/${product.id}`)}
       />
       <div

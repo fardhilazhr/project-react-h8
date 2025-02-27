@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="p-6 sm:p-2">
+      <div className="p-2 sm:p-2">
         <div className="mx-4 my-4 flex justify-center">
           <select
             className="border border-slate-200 px-4 py-3 rounded-lg"
@@ -33,7 +33,7 @@ export default function Home() {
           </select>
         </div>
 
-        <div className="flex gap-4 lg:gap-7  flex-wrap my-8 justify-center items-center px-6 py-3">
+        <div className="flex gap-4 lg:gap-7  flex-wrap my-8 justify-center items-center">
           {products.map((product, id) => (
             <Product product={product} key={id} />
           ))}
