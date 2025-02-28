@@ -20,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="lg:px-10">
       <div className="p-2 sm:p-2">
         <div className="mx-4 my-4 flex justify-center">
           <select

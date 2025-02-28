@@ -23,7 +23,7 @@ export default function Cart() {
             <div className="flex flex-col items-center">
               <img
                 src="/assets/noItem.jpg"
-                className="w-[500px] h-[500px]"
+                className="w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]"
                 alt="empty cart"
               />
               <p className="text-2xl text-center mb-8 font-bold text-red-400">
